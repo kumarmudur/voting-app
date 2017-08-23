@@ -9,25 +9,28 @@ const initialState = {
 export default (state = initialState, action) => {
     switch (action.type) {
         case 'VOTE_ANGULAR':
-            return Object.assign({}, state, {
+            state = {
+                ...state,
                 angular: state.angular + 1
-            })
+            }
             break;
 
         case 'VOTE_REACT': 
-            return Object.assign({}, state, {
+            state = {
+                ...state,
                 react: state.react + 1
-            })
+            }
            break;
 
         case 'VOTE_VUEJS': 
-            return Object.assign({}, state, {
+            state = {
+                ...state,
                 vuejs: state.vuejs + 1
-            })
+            }
            break;
     
-        default:
-        return state  
+        default: 
             break;
     }
+    return state; 
 }
